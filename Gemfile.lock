@@ -1,19 +1,54 @@
+GIT
+  remote: https://github.com/tamaloa/pingdom-ruby.git
+  revision: 6b532f8c22fa68070d29a94019e928944e079945
+  specs:
+    pingdom-ruby (1.1.0.moez)
+      excon
+      faraday
+      i18n
+      yajl-ruby
+
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (5.1.1)
+      activesupport (= 5.1.1)
+    activemodel-serializers-xml (1.0.1)
+      activemodel (> 5.x)
+      activerecord (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
+    activerecord (5.1.1)
+      activemodel (= 5.1.1)
+      activesupport (= 5.1.1)
+      arel (~> 8.0)
+    activeresource (5.0.0)
+      activemodel (>= 5.0, < 6)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (>= 5.0, < 6)
+    activesupport (5.1.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    arel (8.0.0)
     backports (3.8.0)
     buftok (0.2.0)
+    builder (3.2.3)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    concurrent-ruby (1.0.5)
     daemons (1.2.4)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.1.1)
     equalizer (0.0.11)
     eventmachine (1.2.3)
+    excon (0.55.0)
     execjs (2.0.2)
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
@@ -27,17 +62,28 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.3)
     http_parser.rb (0.6.0)
+    i18n (0.8.1)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    minitest (5.10.2)
     multi_json (1.12.1)
     multipart-post (2.0.0)
     naught (1.1.0)
+    netrc (0.11.0)
+    newrelic_api (1.2.4)
     public_suffix (2.0.5)
     rack (1.5.5)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rufus-scheduler (2.0.24)
       tzinfo (>= 0.3.22)
     sass (3.2.19)
@@ -76,6 +122,9 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (1.4.1)
+    time_diff (0.3.0)
+      activesupport
+      i18n
     twitter (6.1.0)
       addressable (~> 2.5)
       buftok (~> 0.2.0)
@@ -91,13 +140,24 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.4)
+    yajl-ruby (1.3.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeresource
+  activesupport
+  dotenv
+  newrelic_api
+  pingdom-ruby!
+  rest-client
   smashing
+  time_diff
   twitter (>= 5.9.0)
+
+RUBY VERSION
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.14.5
