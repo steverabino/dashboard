@@ -22,8 +22,11 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
     padding: 5px 0px 5px 0px;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 18px;
     text-shadow: 1px 1px #0e0e0e;
+    h1 {
+      margin-bottom: 0;
+    }
   }
   .title {
     color: $title-color;

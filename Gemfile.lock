@@ -11,21 +11,6 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (5.1.1)
-      activesupport (= 5.1.1)
-    activemodel-serializers-xml (1.0.1)
-      activemodel (> 5.x)
-      activerecord (> 5.x)
-      activesupport (> 5.x)
-      builder (~> 3.1)
-    activerecord (5.1.1)
-      activemodel (= 5.1.1)
-      activesupport (= 5.1.1)
-      arel (~> 8.0)
-    activeresource (5.0.0)
-      activemodel (>= 5.0, < 6)
-      activemodel-serializers-xml (~> 1.0)
-      activesupport (>= 5.0, < 6)
     activesupport (5.1.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
@@ -33,10 +18,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    arel (8.0.0)
     backports (3.8.0)
     buftok (0.2.0)
-    builder (3.2.3)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -73,13 +56,14 @@ GEM
     multipart-post (2.0.0)
     naught (1.1.0)
     netrc (0.11.0)
-    newrelic_api (1.2.4)
     public_suffix (2.0.5)
     rack (1.5.5)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    representable (2.3.0)
+      uber (~> 0.0.7)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -137,6 +121,7 @@ GEM
       simple_oauth (~> 0.3.1)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    uber (0.0.15)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.4)
@@ -146,11 +131,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeresource
   activesupport
   dotenv
-  newrelic_api
+  faraday
   pingdom-ruby!
+  representable
   rest-client
   smashing
   time_diff

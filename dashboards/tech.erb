@@ -1,9 +1,8 @@
 <script type='text/javascript'>
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
-  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":2,"size_y":2},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":2,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":7,"row":1,"size_x":1,"size_y":2},{"col":1,"row":3,"size_x":1,"size_y":2},{"col":5,"row":1,"size_x":2,"size_y":1}]')
   Dashing.widget_base_dimensions = [260, 260]
-  Dashing.numColumns = 7
+  Dashing.numColumns = 6
 });
 </script>
 
@@ -12,44 +11,89 @@ $(function() {
 
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-      <div data-id="pingdom-status-ID" data-view="Pingdomstatus" data-title="Status Title"></div>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="pingdom-status-1849617" data-view="Pingdomstatus" data-title="Appearhere.co.uk"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="pingdom-status-1849707" data-view="Pingdomstatus" data-title="Appearhere.fr"></div>
+    </li>
+
+    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="pingdom-status-2315063" data-view="Pingdomstatus" data-title="Appearhere.nyc"></div>
+    </li>
+
+    <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="newrelic-app-throughput-5931274" data-view="Number" data-moreinfo="milliseconds" data-title="Web Throughput" style="background-color: rgb(42, 42, 42)"></div>
+    </li>
+
+    <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="newrelic-app-error_rate-5931274" data-view="Number" data-moreinfo="errors per minute" data-title="Web Error Rate" style="background-color: rgb(42, 42, 42)"></div>
+    </li>
+
+    <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="newrelic-server-cpu-35374898" data-view="Meter" data-title="Islay CPU %" data-min="0" data-max="100" style="background-color: rgb(42, 42, 42)"></div>
+    </li>
+
+    <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="newrelic-server-cpu-47113467" data-view="Meter" data-title="Kerrera CPU %" data-min="0" data-max="100" style="background-color: rgb(42, 42, 42)"></div>
+    </li>
+
+    <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="newrelic-server-cpu-47047419" data-view="Meter" data-title="Scalpay CPU %" data-min="0" data-max="100" style="background-color: rgb(42, 42, 42)"></div>
+
+    <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="newrelic-server-memory-35374898" data-view="Meter" data-title="Islay Memory %" data-min="0" data-max="100" style="background-color: rgb(42, 42, 42)"></div>
+    </li>
+
+    <li data-row="2" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="newrelic-server-memory-47113467" data-view="Meter" data-title="Kerrera Memory %" data-min="0" data-max="100" style="background-color: rgb(42, 42, 42)"></div>
+    </li>
+
+    <li data-row="3" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="newrelic-server-memory-47047419" data-view="Meter" data-title="Scalpay Memory %" data-min="0" data-max="100" style="background-color: rgb(42, 42, 42)"></div>
+    </li>
+    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="newrelic-app-response-5931274" data-view="Number" data-moreinfo="milliseconds" data-title="Web Response Times" style="background-color: rgb(42, 42, 42)"></div>
+    </li>
+    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="newrelic-app-response-6299620" data-view="Number" data-moreinfo="milliseconds" data-title="ET Response Times" style="background-color: rgb(42, 42, 42)"></div>
+    </li>
+
+<!--     <li data-row="4" data-col="1" data-sizex="2" data-sizey="1">
       <div data-view="Clock"></div>
       <i class="fa fa-clock-o icon-background"></i>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
       <div data-view="Image" data-image="/logo.png"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="4" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new 1080p dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="synergy" data-view="Meter" data-title="Synergy" data-min="0" data-max="100"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="synergy" data-view="Meter" data-moreinfo="In sync with my neighbour!" data-title="Synergy" data-min="0" data-max="100"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="2">
       <div data-id="buzzwords" data-view="List" data-unordered="true" data-title="Buzzwords" data-moreinfo="# of times said around the office"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="2">
       <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#47bbb3;"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="4" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="twitter_mentions" data-view="Comments" style="background-color:#ff9618;" data-moreinfo="Tweets tagged with #todayilearned"></div>
       <i class="fa fa-twitter icon-background"></i>
-    </li>
+    </li> -->
 
   </ul>
-  <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>
-</div>
+<!--   <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>
+ --></div>

@@ -1,10 +1,22 @@
-require 'newrelic_api'
+require './lib/newrelic_api'
+require './representers/server_representer'
+require './representers/app_representer'
+
+class Server
+  attr_accessor :id, :name, :health_status, :reporting, :cpu, :memory
+end
+
+class Application
+  attr_accessor :id, :name, :health_status, :reporting, :response_time, :throughput, :error_rate
+end
+
+config = YAML::load_file('config/newrelic.yml')
 
 # Newrelic API key
-key = 'ENTER YOUR KEY'
+key = ENV['NEWRELIC_API_KEY']
 
 # Monitored application
-app_name = 'ENTER YOUR APPLICATION NAME'
+app_name = ENV['NEWRELIC_APP_NAME']
 
 # Emitted metrics:
 # - rpm_apdex
@@ -16,15 +28,22 @@ app_name = 'ENTER YOUR APPLICATION NAME'
 # - rpm_cpu
 # - rpm_memory
 
-NewRelicApi.api_key = key
+SCHEDULER.every '1m', :first_in => 0 do |job|
 
-SCHEDULER.every '10s', :first_in => 0 do |job|
-  app = NewRelicApi::Account.find(:first).applications(:params =>
-    {:conditions => {:name => app_name}}
-  ).first
+  api = Api::NewRelic.new
+  server_blueprint = Server.new.extend(ServerRepresenter)
+  app_blueprint = Application.new.extend(AppRepresenter)
 
-  app.threshold_values.each do |v|
-    send_event("rpm_" + v.name.downcase.gsub(/ /, '_'), { value: v.metric_value })
+  config['servers'].each do |id|
+    server = server_blueprint.from_json(api.server(id).body)
+    send_event("newrelic-server-memory-#{id}", { value: server.memory })
+    send_event("newrelic-server-cpu-#{id}", { value: server.cpu })
   end
 
+  config['applications'].each do |id|
+    app = app_blueprint.from_json(api.application(id).body)
+    send_event("newrelic-app-response-#{id}", { current: app.response_time })
+    send_event("newrelic-app-throughput-#{id}", { current: app.throughput })
+    send_event("newrelic-app-error_rate-#{id}", { current: app.error_rate })
+  end
 end

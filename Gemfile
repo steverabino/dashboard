@@ -5,8 +5,8 @@ ruby '2.3.1'
 gem 'smashing'
 
 ## New Relic
-gem 'activeresource'
-gem 'newrelic_api'
+gem 'faraday'
+gem 'representable'
 
 ## Pingdom
 gem 'pingdom-ruby', :git => "https://github.com/tamaloa/pingdom-ruby.git"

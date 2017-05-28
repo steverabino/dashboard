@@ -8,7 +8,6 @@ password = ENV['PINGDOM_PASSWORD'] || ''
 
 config = YAML::load_file('config/pingdom.yml')
 
-
 # Calculation of Uptime for periodInHour
 def calc_uptime(user, password, api_key, id, lastTime, nowTime)
   urlUptime = "https://#{CGI::escape user}:#{CGI::escape password}@api.pingdom.com/api/2.0/summary.average/#{id}?from=#{lastTime}&to=#{nowTime}&includeuptime=true"
@@ -24,7 +23,7 @@ def calc_uptime(user, password, api_key, id, lastTime, nowTime)
 end
 
 # :first_in sets how long it takes before the job is first run. In this case, it is run immediately
-SCHEDULER.every '50s', :first_in => 0 do |job|
+SCHEDULER.every '1m', :first_in => 0 do |job|
 
   # Get the unix timestamps
   t24_hours = 86400 # 24 hours in seconds
@@ -46,5 +45,4 @@ SCHEDULER.every '50s', :first_in => 0 do |job|
                                 })
 
   end
-
 end
